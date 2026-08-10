@@ -1,0 +1,12 @@
+# Xcode
+# ========================
+build/
+DerivedData/
+*.xcodeproj
+*.xcworkspace
+*.xcuserstate
+
+# OS X
+# ========================
+.DS_Store
+profile
