@@ -1,8 +1,8 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @State private var isDarkMode = false
-    @State private var fontSize: Double = 16.0
+    @AppStorage("isDarkMode") private var isDarkMode = false
+    @AppStorage("readerFontSize") private var fontSize: Double = 16.0
     @State private var isAO3User = false // Guest or AO3 user
     @State private var username = "Guest"
     
@@ -56,6 +56,7 @@ struct SettingsView: View {
             }
             .navigationTitle("Settings")
         }
+        .preferredColorScheme(isDarkMode ? .dark : .light)
     }
 }
 

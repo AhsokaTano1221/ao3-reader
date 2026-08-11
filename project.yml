@@ -1,6 +1,10 @@
 name: AO3Reader
 options:
   bundleIdPrefix: com.aanugupta
+packages:
+  SwiftSoup:
+    url: https://github.com/scinfu/SwiftSoup.git
+    from: 2.7.2
 targets:
   AO3Reader:
     type: application
@@ -10,6 +14,9 @@ targets:
       - path: AO3Reader
     info:
       path: AO3Reader/Info.plist
+    dependencies:
+      - package: SwiftSoup
+        product: SwiftSoup
     settings:
       base:
         GENERATE_INFOPLIST_FILE: false

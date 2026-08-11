@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var selectedTab = 0
+    @AppStorage("isDarkMode") private var isDarkMode = false
     
     var body: some View {
         TabView(selection: $selectedTab) {
@@ -23,6 +24,7 @@ struct ContentView: View {
                 }
                 .tag(2)
         }
+        .preferredColorScheme(isDarkMode ? .dark : .light)
     }
 }
 
