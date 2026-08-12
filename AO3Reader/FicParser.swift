@@ -273,4 +273,216 @@ struct FicParser {
             throw ParserError.parsingFailed(error.localizedDescription)
         }
     }
+    
+    static func searchFics(
+        query: String,
+        title: String,
+        author: String,
+        date: String,
+        completionStatus: String,
+        crossoverStatus: String,
+        isSingleChapter: Bool,
+        wordCount: String,
+        language: String,
+        fandoms: String,
+        rating: String,
+        warnings: Set<String>,
+        categories: Set<String>,
+        characters: String,
+        relationships: String,
+        additionalTags: String,
+        hits: String,
+        kudos: String,
+        comments: String,
+        bookmarks: String,
+        sortBy: String,
+        sortDirection: String,
+        page: Int = 1
+    ) async throws -> [SearchResult] {
+        var components = URLComponents(string: "https://archiveofourown.org/works/search")!
+        
+        var queryItems: [URLQueryItem] = [
+            URLQueryItem(name: "utf8", value: "✓"),
+            URLQueryItem(name: "commit", value: "Search"),
+            URLQueryItem(name: "page", value: String(page))
+        ]
+        
+        // Work Info
+        if !query.isEmpty { queryItems.append(URLQueryItem(name: "work_search[query]", value: query)) }
+        if !title.isEmpty { queryItems.append(URLQueryItem(name: "work_search[title]", value: title)) }
+        if !author.isEmpty { queryItems.append(URLQueryItem(name: "work_search[creators]", value: author)) }
+        if !date.isEmpty { queryItems.append(URLQueryItem(name: "work_search[revised_at]", value: date)) }
+        
+        if completionStatus == "complete" {
+            queryItems.append(URLQueryItem(name: "work_search[complete]", value: "T"))
+        } else if completionStatus == "in_progress" {
+            queryItems.append(URLQueryItem(name: "work_search[complete]", value: "F"))
+        }
+        
+        if crossoverStatus == "exclude" {
+            queryItems.append(URLQueryItem(name: "work_search[crossover]", value: "F"))
+        } else if crossoverStatus == "only" {
+            queryItems.append(URLQueryItem(name: "work_search[crossover]", value: "T"))
+        }
+        
+        if isSingleChapter {
+            queryItems.append(URLQueryItem(name: "work_search[single_chapter]", value: "1"))
+        }
+        
+        if !wordCount.isEmpty { queryItems.append(URLQueryItem(name: "work_search[word_count]", value: wordCount)) }
+        if !language.isEmpty { queryItems.append(URLQueryItem(name: "work_search[language_id]", value: language)) }
+        
+        // Work Tags
+        if !fandoms.isEmpty { queryItems.append(URLQueryItem(name: "work_search[fandom_names]", value: fandoms)) }
+        if !rating.isEmpty { queryItems.append(URLQueryItem(name: "work_search[rating_ids]", value: rating)) }
+        
+        for warning in warnings {
+            queryItems.append(URLQueryItem(name: "work_search[warning_ids][]", value: warning))
+        }
+        
+        for category in categories {
+            queryItems.append(URLQueryItem(name: "work_search[category_ids][]", value: category))
+        }
+        
+        if !characters.isEmpty { queryItems.append(URLQueryItem(name: "work_search[character_names]", value: characters)) }
+        if !relationships.isEmpty { queryItems.append(URLQueryItem(name: "work_search[relationship_names]", value: relationships)) }
+        if !additionalTags.isEmpty { queryItems.append(URLQueryItem(name: "work_search[freeform_names]", value: additionalTags)) }
+        
+        // Work Stats
+        if !hits.isEmpty { queryItems.append(URLQueryItem(name: "work_search[hits]", value: hits)) }
+        if !kudos.isEmpty { queryItems.append(URLQueryItem(name: "work_search[kudos_count]", value: kudos)) }
+        if !comments.isEmpty { queryItems.append(URLQueryItem(name: "work_search[comments_count]", value: comments)) }
+        if !bookmarks.isEmpty { queryItems.append(URLQueryItem(name: "work_search[bookmarks_count]", value: bookmarks)) }
+        
+        // Sorting
+        if !sortBy.isEmpty { queryItems.append(URLQueryItem(name: "work_search[sort_column]", value: sortBy)) }
+        if !sortDirection.isEmpty { queryItems.append(URLQueryItem(name: "work_search[sort_direction]", value: sortDirection)) }
+        
+        components.queryItems = queryItems
+        
+        guard let url = components.url else {
+            throw ParserError.invalidURL
+        }
+        
+        NSLog("AO3 Search Request URL: \(url.absoluteString)")
+        
+        var request = URLRequest(url: url)
+        request.setValue("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 Safari/605.1.15", forHTTPHeaderField: "User-Agent")
+        
+        let data: Data
+        let response: URLResponse
+        do {
+            (data, response) = try await URLSession.shared.data(for: request)
+        } catch {
+            NSLog("AO3 Search Network Error: \(error.localizedDescription)")
+            throw ParserError.networkError(error)
+        }
+        
+        guard let httpResponse = response as? HTTPURLResponse else {
+            NSLog("AO3 Search Error: Response is not HTTP")
+            throw ParserError.emptyResponse
+        }
+        
+        NSLog("AO3 Search Response Status Code: \(httpResponse.statusCode)")
+        guard (200...299).contains(httpResponse.statusCode) else {
+            throw ParserError.emptyResponse
+        }
+        
+        guard let html = String(data: data, encoding: .utf8) else {
+            throw ParserError.parsingFailed("Unable to decode search results.")
+        }
+        
+        NSLog("AO3 Search HTML length: \(html.count)")
+        
+        do {
+            let doc: Document = try SwiftSoup.parse(html)
+            let workElements = try doc.select("ol.work.index > li.work.blurb")
+            NSLog("AO3 Search found work elements count: \(workElements.count)")
+            
+            var results: [SearchResult] = []
+            
+            for element in workElements {
+                let rawID = element.id()
+                let id = rawID.replacingOccurrences(of: "work_", with: "")
+                if id.isEmpty {
+                    NSLog("AO3 Search element skipped: ID is empty")
+                    continue
+                }
+                
+                guard let titleAnchor = try element.select("h4.heading a").first() else {
+                    NSLog("AO3 Search work \(id) skipped: titleAnchor is missing")
+                    continue
+                }
+                let title = try titleAnchor.text().trimmingCharacters(in: .whitespacesAndNewlines)
+                
+                var author = "Anonymous"
+                if let authorAnchor = try element.select("h4.heading a[rel=author]").first() {
+                    author = try authorAnchor.text().trimmingCharacters(in: .whitespacesAndNewlines)
+                }
+                
+                let fandomTags = try element.select("h5.fandoms a.tag")
+                let fandoms = try fandomTags.map { try $0.text().trimmingCharacters(in: .whitespacesAndNewlines) }
+                
+                var summary = ""
+                if let summaryBlock = try element.select("blockquote.summary").first() {
+                    summary = try summaryBlock.text().trimmingCharacters(in: .whitespacesAndNewlines)
+                }
+                
+                let tagLinks = try element.select("ul.tags a.tag")
+                let tags = try tagLinks.prefix(12).map { try $0.text().trimmingCharacters(in: .whitespacesAndNewlines) }
+                
+                let wordCount = try element.select("dl.stats dd.words").first()?.text().trimmingCharacters(in: .whitespacesAndNewlines) ?? "0"
+                let chapterInfo = try element.select("dl.stats dd.chapters").first()?.text().trimmingCharacters(in: .whitespacesAndNewlines) ?? "1/1"
+                let kudos = try element.select("dl.stats dd.kudos").first()?.text().trimmingCharacters(in: .whitespacesAndNewlines) ?? "0"
+                let hits = try element.select("dl.stats dd.hits").first()?.text().trimmingCharacters(in: .whitespacesAndNewlines) ?? "0"
+                let language = try element.select("dl.stats dd.language").first()?.text().trimmingCharacters(in: .whitespacesAndNewlines) ?? "English"
+                
+                let result = SearchResult(
+                    id: id,
+                    title: title,
+                    author: author,
+                    fandoms: fandoms,
+                    summary: summary,
+                    tags: tags,
+                    language: language,
+                    wordCount: wordCount,
+                    chapterInfo: chapterInfo,
+                    kudos: kudos,
+                    hits: hits
+                )
+                results.append(result)
+            }
+            
+            NSLog("AO3 Search successfully parsed results count: \(results.count)")
+            return results
+        } catch {
+            NSLog("AO3 Search Parsing Exception: \(error.localizedDescription)")
+            throw ParserError.parsingFailed(error.localizedDescription)
+        }
+    }
+    
+    static func fetchAutocompleteSuggestions(term: String, type: String) async throws -> [String] {
+        var components = URLComponents(string: "https://archiveofourown.org/autocomplete/\(type)")!
+        components.queryItems = [URLQueryItem(name: "term", value: term)]
+        
+        guard let url = components.url else {
+            return []
+        }
+        
+        var request = URLRequest(url: url)
+        request.setValue("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 Safari/605.1.15", forHTTPHeaderField: "User-Agent")
+        
+        let (data, response) = try await URLSession.shared.data(for: request)
+        guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
+            return []
+        }
+        
+        struct AutocompleteItem: Codable {
+            let id: String
+            let name: String
+        }
+        
+        let items = try JSONDecoder().decode([AutocompleteItem].self, from: data)
+        return items.map { $0.name }
+    }
 }

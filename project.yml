@@ -14,6 +14,12 @@ targets:
       - path: AO3Reader
     info:
       path: AO3Reader/Info.plist
+      properties:
+        UILaunchScreen:
+          UIImageName: ""
+        LSRequiresIPhoneOS: true
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
     dependencies:
       - package: SwiftSoup
         product: SwiftSoup

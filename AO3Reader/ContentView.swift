@@ -12,17 +12,23 @@ struct ContentView: View {
                 }
                 .tag(0)
             
+            SearchView()
+                .tabItem {
+                    Label("Search", systemImage: "magnifyingglass")
+                }
+                .tag(1)
+            
             LibraryView()
                 .tabItem {
                     Label("Library", systemImage: "books.vertical")
                 }
-                .tag(1)
+                .tag(2)
             
             SettingsView()
                 .tabItem {
                     Label("Settings", systemImage: "gearshape")
                 }
-                .tag(2)
+                .tag(3)
         }
         .preferredColorScheme(isDarkMode ? .dark : .light)
     }

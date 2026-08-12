@@ -6,6 +6,7 @@ struct ReaderView: View {
     @State private var currentChapterIndex = 0
     @AppStorage("readerFontSize") private var fontSize: Double = 16.0
     @AppStorage("isDarkMode") private var isDarkMode: Bool = false
+    @ObservedObject private var libraryManager = LibraryManager.shared
     
     var currentChapter: Chapter {
         if fic.chapters.indices.contains(currentChapterIndex) {
@@ -198,6 +199,19 @@ struct ReaderView: View {
         .navigationTitle(fic.isSingleChapter ? "Reading" : "Chapter \(currentChapterIndex + 1)")
         .navigationBarTitleDisplayMode(.inline)
         .preferredColorScheme(isDarkMode ? .dark : .light)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button(action: {
+                    if libraryManager.isSaved(fic.id) {
+                        libraryManager.deleteFic(fic)
+                    } else {
+                        libraryManager.saveFic(fic)
+                    }
+                }) {
+                    Image(systemName: libraryManager.isSaved(fic.id) ? "bookmark.fill" : "bookmark")
+                }
+            }
+        }
     }
     
     private func formattedParagraph(_ markdown: String) -> AttributedString {
