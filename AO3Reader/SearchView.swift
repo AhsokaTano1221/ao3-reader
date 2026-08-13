@@ -1,6 +1,16 @@
 import SwiftUI
 
 struct SearchView: View {
+    // Custom App Skins Storage (Hex Strings)
+    @AppStorage("theme_backgroundColorHex") private var backgroundColorHex = "#F5F5F3"
+    @AppStorage("theme_textColorHex") private var textColorHex = "#222222"
+    @AppStorage("theme_accentColorHex") private var accentColorHex = "#B08F54"
+    @AppStorage("theme_fontName") private var fontName = "Georgia"
+    
+    private var themeBg: Color { Color(hex: backgroundColorHex) }
+    private var themeText: Color { Color(hex: textColorHex) }
+    private var themeAccent: Color { Color(hex: accentColorHex) }
+    
     // Work Info States
     @State private var query = ""
     @State private var title = ""
@@ -115,6 +125,14 @@ struct SearchView: View {
         SortOption(id: "title_to_sort_on", label: "Title")
     ]
     
+    func inputFont() -> Font {
+        if fontName == "System" {
+            return .body
+        } else {
+            return .custom(fontName, size: 16)
+        }
+    }
+    
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
@@ -144,11 +162,13 @@ struct SearchView: View {
                                         }
                                         Text(isSearching ? "Searching..." : "Search AO3")
                                             .fontWeight(.semibold)
+                                            .foregroundColor(themeBg) // Accent contrast
                                         Spacer()
                                     }
                                 }
                                 .disabled(isSearching || (query.isEmpty && title.isEmpty && creator.isEmpty && fandoms.isEmpty && characters.isEmpty && relationships.isEmpty && additionalTags.isEmpty))
                             }
+                            .listRowBackground(themeAccent) // Accent background
                             
                             // Search Results Section
                             if !results.isEmpty {
@@ -180,6 +200,9 @@ struct SearchView: View {
                                 }
                             }
                         }
+                        .scrollContentBackground(.hidden)
+                        .background(themeBg)
+                        .font(inputFont())
                     } else {
                         Form {
                             Section(header: Text("Load via Direct URL")) {
@@ -202,6 +225,9 @@ struct SearchView: View {
                                 .disabled(directURL.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
                             }
                         }
+                        .scrollContentBackground(.hidden)
+                        .background(themeBg)
+                        .font(inputFont())
                     }
                     
                     // Loading Overlay when downloading a fic
@@ -224,7 +250,7 @@ struct SearchView: View {
                 }
             }
             .navigationTitle(searchMode == 0 ? "Search" : "Direct URL")
-            .navigationDestination(isPresented: $showReader) {
+            .fullScreenCover(isPresented: $showReader) {
                 if let fic = loadedFic {
                     ReaderView(fic: fic)
                 }
@@ -673,6 +699,20 @@ struct SearchResultCard: View {
     let result: SearchResult
     let onTap: () -> Void
     
+    @AppStorage("theme_accentColorHex") private var accentColorHex = "#B08F54"
+    @AppStorage("theme_fontName") private var fontName = "Georgia"
+    @Environment(\.colorScheme) private var colorScheme
+    
+    private var themeAccent: Color { Color(hex: accentColorHex) }
+    
+    func cardTitleFont() -> Font {
+        if fontName == "System" {
+            return .headline
+        } else {
+            return .custom(fontName, size: 18).bold()
+        }
+    }
+    
     var body: some View {
         Button(action: onTap) {
             VStack(alignment: .leading, spacing: 8) {
@@ -680,7 +720,7 @@ struct SearchResultCard: View {
                 HStack(alignment: .top) {
                     VStack(alignment: .leading, spacing: 2) {
                         Text(result.title)
-                            .font(.headline)
+                            .font(cardTitleFont())
                             .foregroundColor(.primary)
                             .lineLimit(2)
                             .multilineTextAlignment(.leading)
@@ -703,8 +743,8 @@ struct SearchResultCard: View {
                                     .fontWeight(.semibold)
                                     .padding(.horizontal, 8)
                                     .padding(.vertical, 4)
-                                    .background(Color.blue.opacity(0.12))
-                                    .foregroundColor(.blue)
+                                    .background(themeAccent.opacity(0.12))
+                                    .foregroundColor(themeAccent)
                                     .cornerRadius(6)
                             }
                         }
@@ -752,9 +792,13 @@ struct SearchResultCard: View {
                 .foregroundColor(.secondary)
             }
             .padding(14)
-            .background(Color(.secondarySystemGroupedBackground))
+            .background(colorScheme == .dark ? Color(.secondarySystemGroupedBackground) : Color.white)
             .cornerRadius(12)
-            .shadow(color: Color.black.opacity(0.04), radius: 5, x: 0, y: 3)
+            .overlay(
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(themeAccent.opacity(0.18), lineWidth: 1)
+            )
+            .shadow(color: Color.black.opacity(0.03), radius: 6, x: 0, y: 3)
         }
         .buttonStyle(.plain)
     }

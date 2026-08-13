@@ -1,0 +1,535 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project AO3Reader.xcodeproj -scheme AO3Reader -configuration Debug -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 16 Pro" SYMROOT=./build clean build
+
+Build settings from command line:
+    SDKROOT = iphonesimulator18.5
+    SYMROOT = ./build
+
+Resolve Package Graph
+
+
+Resolved source packages:
+  SwiftSoup: https://github.com/scinfu/SwiftSoup.git @ 2.13.7
+
+ComputePackagePrebuildTargetDependencyGraph
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+** CLEAN SUCCEEDED **
+
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (3 targets)
+    Target 'AO3Reader' in project 'AO3Reader'
+        ➜ Explicit dependency on target 'SwiftSoup' in project 'SwiftSoup'
+    Target 'SwiftSoup' in project 'SwiftSoup'
+        ➜ Explicit dependency on target 'SwiftSoup' in project 'SwiftSoup'
+    Target 'SwiftSoup' in project 'SwiftSoup' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+Build description signature: 329a587df7af2ca569bb36354193caa2
+Build description path: /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/XCBuildData/329a587df7af2ca569bb36354193caa2.xcbuilddata
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk /Users/aanugupta/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator18.5-22F76-d5fc8ad4295d2ef488fb7d0f804ce0c4.sdkstatcache
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk -o /Users/aanugupta/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator18.5-22F76-d5fc8ad4295d2ef488fb7d0f804ce0c4.sdkstatcache
+
+CreateBuildDirectory /Users/aanugupta/ao3Reader/ao3-reader/build
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    builtin-create-build-directory /Users/aanugupta/ao3Reader/ao3-reader/build
+
+CreateBuildDirectory /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/build
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    builtin-create-build-directory /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/build
+
+CreateBuildDirectory /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    builtin-create-build-directory /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex
+
+CreateBuildDirectory /Users/aanugupta/ao3Reader/ao3-reader/build/Debug-iphonesimulator
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    builtin-create-build-directory /Users/aanugupta/ao3Reader/ao3-reader/build/Debug-iphonesimulator
+
+WriteAuxiliaryFile /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader-7393a3273f3c84dd035474ab1b146944-VFS-iphonesimulator/all-product-headers.yaml
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    write-file /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader-7393a3273f3c84dd035474ab1b146944-VFS-iphonesimulator/all-product-headers.yaml
+
+CreateBuildDirectory /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    builtin-create-build-directory /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator
+
+CreateBuildDirectory /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/build/Debug-iphonesimulator
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    builtin-create-build-directory /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/build/Debug-iphonesimulator
+
+CreateBuildDirectory /Users/aanugupta/ao3Reader/ao3-reader/build/Debug-iphonesimulator/PackageFrameworks
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    builtin-create-build-directory /Users/aanugupta/ao3Reader/ao3-reader/build/Debug-iphonesimulator/PackageFrameworks
+
+CreateBuildDirectory /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/build/Debug-iphonesimulator/PackageFrameworks
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    builtin-create-build-directory /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/build/Debug-iphonesimulator/PackageFrameworks
+
+WriteAuxiliaryFile /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/SwiftSoup.build/Debug-iphonesimulator/SwiftSoup.build/SwiftSoup.modulemap (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup
+    write-file /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/SwiftSoup.build/Debug-iphonesimulator/SwiftSoup.build/SwiftSoup.modulemap
+
+WriteAuxiliaryFile /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/SwiftSoup.build/Debug-iphonesimulator/SwiftSoup.build/SwiftSoup.DependencyStaticMetadataFileList (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup
+    write-file /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/SwiftSoup.build/Debug-iphonesimulator/SwiftSoup.build/SwiftSoup.DependencyStaticMetadataFileList
+
+WriteAuxiliaryFile /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/SwiftSoup.build/Debug-iphonesimulator/SwiftSoup.build/SwiftSoup.DependencyMetadataFileList (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup
+    write-file /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/SwiftSoup.build/Debug-iphonesimulator/SwiftSoup.build/SwiftSoup.DependencyMetadataFileList
+
+WriteAuxiliaryFile /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/SwiftSoup.build/Debug-iphonesimulator/SwiftSoup.build/Objects-normal/arm64/SwiftSoup_const_extract_protocols.json (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup
+    write-file /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/SwiftSoup.build/Debug-iphonesimulator/SwiftSoup.build/Objects-normal/arm64/SwiftSoup_const_extract_protocols.json
+
+WriteAuxiliaryFile /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/SwiftSoup.build/Debug-iphonesimulator/SwiftSoup.build/Objects-normal/arm64/SwiftSoup.SwiftConstValuesFileList (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup
+    write-file /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/SwiftSoup.build/Debug-iphonesimulator/SwiftSoup.build/Objects-normal/arm64/SwiftSoup.SwiftConstValuesFileList
+
+WriteAuxiliaryFile /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/SwiftSoup.build/Debug-iphonesimulator/SwiftSoup.build/Objects-normal/arm64/SwiftSoup.SwiftFileList (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup
+    write-file /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/SwiftSoup.build/Debug-iphonesimulator/SwiftSoup.build/Objects-normal/arm64/SwiftSoup.SwiftFileList
+
+WriteAuxiliaryFile /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/SwiftSoup.build/Debug-iphonesimulator/SwiftSoup.build/Objects-normal/arm64/SwiftSoup.LinkFileList (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup
+    write-file /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/SwiftSoup.build/Debug-iphonesimulator/SwiftSoup.build/Objects-normal/arm64/SwiftSoup.LinkFileList
+
+WriteAuxiliaryFile /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/SwiftSoup.build/Debug-iphonesimulator/SwiftSoup.build/Objects-normal/arm64/SwiftSoup-OutputFileMap.json (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup
+    write-file /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/SwiftSoup.build/Debug-iphonesimulator/SwiftSoup.build/Objects-normal/arm64/SwiftSoup-OutputFileMap.json
+
+WriteAuxiliaryFile /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/Objects-normal/arm64/AO3Reader_const_extract_protocols.json (in target 'AO3Reader' from project 'AO3Reader')
+    cd /Users/aanugupta/ao3Reader/ao3-reader
+    write-file /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/Objects-normal/arm64/AO3Reader_const_extract_protocols.json
+
+Copy /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator/SwiftSoup.modulemap /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/SwiftSoup.build/Debug-iphonesimulator/SwiftSoup.build/SwiftSoup.modulemap (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/SwiftSoup.build/Debug-iphonesimulator/SwiftSoup.build/SwiftSoup.modulemap /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator
+
+WriteAuxiliaryFile /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/Objects-normal/arm64/AO3Reader.SwiftFileList (in target 'AO3Reader' from project 'AO3Reader')
+    cd /Users/aanugupta/ao3Reader/ao3-reader
+    write-file /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/Objects-normal/arm64/AO3Reader.SwiftFileList
+
+WriteAuxiliaryFile /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/Objects-normal/arm64/AO3Reader.SwiftConstValuesFileList (in target 'AO3Reader' from project 'AO3Reader')
+    cd /Users/aanugupta/ao3Reader/ao3-reader
+    write-file /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/Objects-normal/arm64/AO3Reader.SwiftConstValuesFileList
+
+WriteAuxiliaryFile /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/Objects-normal/arm64/AO3Reader.LinkFileList (in target 'AO3Reader' from project 'AO3Reader')
+    cd /Users/aanugupta/ao3Reader/ao3-reader
+    write-file /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/Objects-normal/arm64/AO3Reader.LinkFileList
+
+WriteAuxiliaryFile /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/Objects-normal/arm64/AO3Reader-OutputFileMap.json (in target 'AO3Reader' from project 'AO3Reader')
+    cd /Users/aanugupta/ao3Reader/ao3-reader
+    write-file /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/Objects-normal/arm64/AO3Reader-OutputFileMap.json
+
+WriteAuxiliaryFile /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/AO3Reader.hmap (in target 'AO3Reader' from project 'AO3Reader')
+    cd /Users/aanugupta/ao3Reader/ao3-reader
+    write-file /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/AO3Reader.hmap
+
+WriteAuxiliaryFile /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/DerivedSources/Entitlements-Simulated.plist (in target 'AO3Reader' from project 'AO3Reader')
+    cd /Users/aanugupta/ao3Reader/ao3-reader
+    write-file /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/DerivedSources/Entitlements-Simulated.plist
+
+WriteAuxiliaryFile /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/AO3Reader.DependencyStaticMetadataFileList (in target 'AO3Reader' from project 'AO3Reader')
+    cd /Users/aanugupta/ao3Reader/ao3-reader
+    write-file /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/AO3Reader.DependencyStaticMetadataFileList
+
+WriteAuxiliaryFile /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/AO3Reader.DependencyMetadataFileList (in target 'AO3Reader' from project 'AO3Reader')
+    cd /Users/aanugupta/ao3Reader/ao3-reader
+    write-file /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/AO3Reader.DependencyMetadataFileList
+
+WriteAuxiliaryFile /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/AO3Reader-project-headers.hmap (in target 'AO3Reader' from project 'AO3Reader')
+    cd /Users/aanugupta/ao3Reader/ao3-reader
+    write-file /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/AO3Reader-project-headers.hmap
+
+WriteAuxiliaryFile /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/AO3Reader-own-target-headers.hmap (in target 'AO3Reader' from project 'AO3Reader')
+    cd /Users/aanugupta/ao3Reader/ao3-reader
+    write-file /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/AO3Reader-own-target-headers.hmap
+
+WriteAuxiliaryFile /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/AO3Reader-generated-files.hmap (in target 'AO3Reader' from project 'AO3Reader')
+    cd /Users/aanugupta/ao3Reader/ao3-reader
+    write-file /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/AO3Reader-generated-files.hmap
+
+WriteAuxiliaryFile /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/AO3Reader-all-target-headers.hmap (in target 'AO3Reader' from project 'AO3Reader')
+    cd /Users/aanugupta/ao3Reader/ao3-reader
+    write-file /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/AO3Reader-all-target-headers.hmap
+
+WriteAuxiliaryFile /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/AO3Reader-all-non-framework-target-headers.hmap (in target 'AO3Reader' from project 'AO3Reader')
+    cd /Users/aanugupta/ao3Reader/ao3-reader
+    write-file /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/AO3Reader-all-non-framework-target-headers.hmap
+
+WriteAuxiliaryFile /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/AO3Reader-DebugDylibPath-normal-arm64.txt (in target 'AO3Reader' from project 'AO3Reader')
+    cd /Users/aanugupta/ao3Reader/ao3-reader
+    write-file /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/AO3Reader-DebugDylibPath-normal-arm64.txt
+
+WriteAuxiliaryFile /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/AO3Reader-DebugDylibInstallName-normal-arm64.txt (in target 'AO3Reader' from project 'AO3Reader')
+    cd /Users/aanugupta/ao3Reader/ao3-reader
+    write-file /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/AO3Reader-DebugDylibInstallName-normal-arm64.txt
+
+MkDir /Users/aanugupta/ao3Reader/ao3-reader/build/Debug-iphonesimulator/AO3Reader.app (in target 'AO3Reader' from project 'AO3Reader')
+    cd /Users/aanugupta/ao3Reader/ao3-reader
+    /bin/mkdir -p /Users/aanugupta/ao3Reader/ao3-reader/build/Debug-iphonesimulator/AO3Reader.app
+
+SwiftDriver SwiftSoup normal arm64 com.apple.xcode.tools.swift.compiler (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name SwiftSoup -Onone -enforce-exclusivity\=checked @/Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/SwiftSoup.build/Debug-iphonesimulator/SwiftSoup.build/Objects-normal/arm64/SwiftSoup.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DXcode -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk -target arm64-apple-ios13.0-simulator -g -module-cache-path /Users/aanugupta/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -suppress-warnings -index-store-path /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Index.noindex/DataStore -swift-version 6 -I /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/build/Debug-iphonesimulator -I /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/build/Debug-iphonesimulator -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk/Developer/Library/Frameworks -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/aanugupta/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator18.5-22F76-d5fc8ad4295d2ef488fb7d0f804ce0c4.sdkstatcache -output-file-map /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/SwiftSoup.build/Debug-iphonesimulator/SwiftSoup.build/Objects-normal/arm64/SwiftSoup-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/SwiftSoup.build/Debug-iphonesimulator/SwiftSoup.build/Objects-normal/arm64/SwiftSoup.swiftmodule -user-module-version 2.13.7 -validate-clang-modules-once -clang-build-session-file /Users/aanugupta/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -package-name swiftsoup -Xcc -I/Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/SwiftSoup.build/Debug-iphonesimulator/SwiftSoup.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/SwiftSoup.build/Debug-iphonesimulator/SwiftSoup.build/Objects-normal/arm64/SwiftSoup_const_extract_protocols.json -Xcc -I/Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/build/Debug-iphonesimulator/include -Xcc -I/Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/SwiftSoup.build/Debug-iphonesimulator/SwiftSoup.build/DerivedSources-normal/arm64 -Xcc -I/Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/SwiftSoup.build/Debug-iphonesimulator/SwiftSoup.build/DerivedSources/arm64 -Xcc -I/Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/SwiftSoup.build/Debug-iphonesimulator/SwiftSoup.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/SwiftSoup.build/Debug-iphonesimulator/SwiftSoup.build/Objects-normal/arm64/SwiftSoup-Swift.h -working-directory /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj -experimental-emit-module-separately -disable-cmo
+
+SwiftCompile normal arm64 Compiling\ Element.swift,\ ElementQuery.swift,\ Elements.swift,\ Entities.swift,\ Evaluator.swift,\ Exception.swift,\ FormElement.swift,\ HtmlTreeBuilder.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/Element.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/ElementQuery.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/Elements.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/Entities.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/Evaluator.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/Exception.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/FormElement.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/HtmlTreeBuilder.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/Element.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/ElementQuery.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/Elements.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/Entities.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/Evaluator.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/Exception.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/FormElement.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/HtmlTreeBuilder.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 Compiling\ QueryParserCache.swift,\ SourceRange.swift,\ StreamReader.swift,\ String.swift,\ StringBuilder.swift,\ StringUtil.swift,\ StructuralEvaluator.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/QueryParserCache.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/SourceRange.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/StreamReader.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/String.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/StringBuilder.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/StringUtil.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/StructuralEvaluator.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/QueryParserCache.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/SourceRange.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/StreamReader.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/String.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/StringBuilder.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/StringUtil.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/StructuralEvaluator.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 Compiling\ HtmlTreeBuilderState.swift,\ LRUCache.swift,\ Mutex.swift,\ Node.swift,\ NodeTraversor.swift,\ NodeVisitor.swift,\ OrderedSet.swift,\ ParseError.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/HtmlTreeBuilderState.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/LRUCache.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/Mutex.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/Node.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/NodeTraversor.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/NodeVisitor.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/OrderedSet.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/ParseError.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/HtmlTreeBuilderState.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/LRUCache.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/Mutex.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/Node.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/NodeTraversor.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/NodeVisitor.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/OrderedSet.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/ParseError.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 Compiling\ SwiftSoup.swift,\ Tag.swift,\ TextNode.swift,\ Token.swift,\ TokenQueue.swift,\ Tokeniser.swift,\ TokeniserState.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/SwiftSoup.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/Tag.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/TextNode.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/Token.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/TokenQueue.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/Tokeniser.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/TokeniserState.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/SwiftSoup.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/Tag.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/TextNode.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/Token.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/TokenQueue.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/Tokeniser.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/TokeniserState.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 Compiling\ Attribute.swift,\ Attributes.swift,\ BinarySearch.swift,\ BooleanAttribute.swift,\ ByteSlice.swift,\ CharacterExt.swift,\ CharacterReader.swift,\ Cleaner.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/Attribute.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/Attributes.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/BinarySearch.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/BooleanAttribute.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/ByteSlice.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/CharacterExt.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/CharacterReader.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/Cleaner.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/Attribute.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/Attributes.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/BinarySearch.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/BooleanAttribute.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/ByteSlice.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/CharacterExt.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/CharacterReader.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/Cleaner.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 Compiling\ Collector.swift,\ CombiningEvaluator.swift,\ Comment.swift,\ CssSelector.swift,\ DataNode.swift,\ DebugTrace.swift,\ Document.swift,\ DocumentType.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/Collector.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/CombiningEvaluator.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/Comment.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/CssSelector.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/DataNode.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/DebugTrace.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/Document.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/DocumentType.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/Collector.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/CombiningEvaluator.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/Comment.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/CssSelector.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/DataNode.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/DebugTrace.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/Document.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/DocumentType.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 Compiling\ ParseErrorList.swift,\ ParseSettings.swift,\ Parser.swift,\ ParsingStrings.swift,\ Pattern.swift,\ Profiler.swift,\ QueryParser.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/ParseErrorList.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/ParseSettings.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/Parser.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/ParsingStrings.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/Pattern.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/Profiler.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/QueryParser.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/ParseErrorList.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/ParseSettings.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/Parser.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/ParsingStrings.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/Pattern.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/Profiler.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/QueryParser.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ SwiftSoup (in target 'SwiftSoup' from project 'SwiftSoup')
+
+EmitSwiftModule normal arm64 (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 Compiling\ TreeBuilder.swift,\ UTF8Arrays.swift,\ UnicodeScalar.swift,\ Validate.swift,\ Whitelist.swift,\ XmlDeclaration.swift,\ XmlTreeBuilder.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/TreeBuilder.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/UTF8Arrays.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/UnicodeScalar.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/Validate.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/Whitelist.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/XmlDeclaration.swift /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/XmlTreeBuilder.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/TreeBuilder.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/UTF8Arrays.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/UnicodeScalar.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/Validate.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/Whitelist.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/XmlDeclaration.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftCompile normal arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/Sources/XmlTreeBuilder.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    
+
+SwiftDriverJobDiscovery normal arm64 Compiling ParseErrorList.swift, ParseSettings.swift, Parser.swift, ParsingStrings.swift, Pattern.swift, Profiler.swift, QueryParser.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftDriverJobDiscovery normal arm64 Emitting module for SwiftSoup (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftDriver\ Compilation\ Requirements SwiftSoup normal arm64 com.apple.xcode.tools.swift.compiler (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name SwiftSoup -Onone -enforce-exclusivity\=checked @/Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/SwiftSoup.build/Debug-iphonesimulator/SwiftSoup.build/Objects-normal/arm64/SwiftSoup.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DXcode -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk -target arm64-apple-ios13.0-simulator -g -module-cache-path /Users/aanugupta/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -suppress-warnings -index-store-path /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Index.noindex/DataStore -swift-version 6 -I /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/build/Debug-iphonesimulator -I /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/build/Debug-iphonesimulator -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk/Developer/Library/Frameworks -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/aanugupta/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator18.5-22F76-d5fc8ad4295d2ef488fb7d0f804ce0c4.sdkstatcache -output-file-map /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/SwiftSoup.build/Debug-iphonesimulator/SwiftSoup.build/Objects-normal/arm64/SwiftSoup-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/SwiftSoup.build/Debug-iphonesimulator/SwiftSoup.build/Objects-normal/arm64/SwiftSoup.swiftmodule -user-module-version 2.13.7 -validate-clang-modules-once -clang-build-session-file /Users/aanugupta/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -package-name swiftsoup -Xcc -I/Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/SwiftSoup.build/Debug-iphonesimulator/SwiftSoup.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/SwiftSoup.build/Debug-iphonesimulator/SwiftSoup.build/Objects-normal/arm64/SwiftSoup_const_extract_protocols.json -Xcc -I/Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/build/Debug-iphonesimulator/include -Xcc -I/Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/SwiftSoup.build/Debug-iphonesimulator/SwiftSoup.build/DerivedSources-normal/arm64 -Xcc -I/Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/SwiftSoup.build/Debug-iphonesimulator/SwiftSoup.build/DerivedSources/arm64 -Xcc -I/Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/SwiftSoup.build/Debug-iphonesimulator/SwiftSoup.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/SwiftSoup.build/Debug-iphonesimulator/SwiftSoup.build/Objects-normal/arm64/SwiftSoup-Swift.h -working-directory /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader.xcodeproj -experimental-emit-module-separately -disable-cmo
+
+SwiftMergeGeneratedHeaders /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator/SwiftSoup-Swift.h /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/SwiftSoup.build/Debug-iphonesimulator/SwiftSoup.build/Objects-normal/arm64/SwiftSoup-Swift.h (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup
+    builtin-swiftHeaderTool -arch arm64 /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/SwiftSoup.build/Debug-iphonesimulator/SwiftSoup.build/Objects-normal/arm64/SwiftSoup-Swift.h -o /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator/SwiftSoup-Swift.h
+
+Copy /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/build/Debug-iphonesimulator/SwiftSoup.swiftmodule/arm64-apple-ios-simulator.swiftmodule /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/SwiftSoup.build/Debug-iphonesimulator/SwiftSoup.build/Objects-normal/arm64/SwiftSoup.swiftmodule (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/SwiftSoup.build/Debug-iphonesimulator/SwiftSoup.build/Objects-normal/arm64/SwiftSoup.swiftmodule /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/build/Debug-iphonesimulator/SwiftSoup.swiftmodule/arm64-apple-ios-simulator.swiftmodule
+
+Copy /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/build/Debug-iphonesimulator/SwiftSoup.swiftmodule/arm64-apple-ios-simulator.swiftdoc /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/SwiftSoup.build/Debug-iphonesimulator/SwiftSoup.build/Objects-normal/arm64/SwiftSoup.swiftdoc (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/SwiftSoup.build/Debug-iphonesimulator/SwiftSoup.build/Objects-normal/arm64/SwiftSoup.swiftdoc /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/build/Debug-iphonesimulator/SwiftSoup.swiftmodule/arm64-apple-ios-simulator.swiftdoc
+
+Copy /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/build/Debug-iphonesimulator/SwiftSoup.swiftmodule/arm64-apple-ios-simulator.abi.json /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/SwiftSoup.build/Debug-iphonesimulator/SwiftSoup.build/Objects-normal/arm64/SwiftSoup.abi.json (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/SwiftSoup.build/Debug-iphonesimulator/SwiftSoup.build/Objects-normal/arm64/SwiftSoup.abi.json /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/build/Debug-iphonesimulator/SwiftSoup.swiftmodule/arm64-apple-ios-simulator.abi.json
+
+Copy /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/build/Debug-iphonesimulator/SwiftSoup.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/SwiftSoup.build/Debug-iphonesimulator/SwiftSoup.build/Objects-normal/arm64/SwiftSoup.swiftsourceinfo (in target 'SwiftSoup' from project 'SwiftSoup')
+    cd /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/SwiftSoup.build/Debug-iphonesimulator/SwiftSoup.build/Objects-normal/arm64/SwiftSoup.swiftsourceinfo /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/SourcePackages/checkouts/SwiftSoup/build/Debug-iphonesimulator/SwiftSoup.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo
+
+ProcessProductPackaging "" /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/AO3Reader.app-Simulated.xcent (in target 'AO3Reader' from project 'AO3Reader')
+    cd /Users/aanugupta/ao3Reader/ao3-reader
+    
+    Entitlements:
+    
+    {
+    "application-identifier" = "FAKETEAMID.com.aanugupta.AO3Reader";
+}
+    
+    builtin-productPackagingUtility -entitlements -format xml -o /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/AO3Reader.app-Simulated.xcent
+
+ProcessProductPackagingDER /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/AO3Reader.app-Simulated.xcent /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/AO3Reader.app-Simulated.xcent.der (in target 'AO3Reader' from project 'AO3Reader')
+    cd /Users/aanugupta/ao3Reader/ao3-reader
+    /usr/bin/derq query -f xml -i /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/AO3Reader.app-Simulated.xcent -o /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/AO3Reader.app-Simulated.xcent.der --raw
+
+SwiftDriver AO3Reader normal arm64 com.apple.xcode.tools.swift.compiler (in target 'AO3Reader' from project 'AO3Reader')
+    cd /Users/aanugupta/ao3Reader/ao3-reader
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name AO3Reader -Onone -enforce-exclusivity\=checked @/Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/Objects-normal/arm64/AO3Reader.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk -target arm64-apple-ios16.0-simulator -g -module-cache-path /Users/aanugupta/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Index.noindex/DataStore -swift-version 5 -I /Users/aanugupta/ao3Reader/ao3-reader/build/Debug-iphonesimulator -F /Users/aanugupta/ao3Reader/ao3-reader/build/Debug-iphonesimulator/PackageFrameworks -F /Users/aanugupta/ao3Reader/ao3-reader/build/Debug-iphonesimulator -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/aanugupta/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator18.5-22F76-d5fc8ad4295d2ef488fb7d0f804ce0c4.sdkstatcache -output-file-map /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/Objects-normal/arm64/AO3Reader-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/Objects-normal/arm64/AO3Reader.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/aanugupta/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/Objects-normal/arm64/AO3Reader_const_extract_protocols.json -Xcc -iquote -Xcc /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/AO3Reader-generated-files.hmap -Xcc -I/Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/AO3Reader-own-target-headers.hmap -Xcc -I/Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/AO3Reader-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader-7393a3273f3c84dd035474ab1b146944-VFS-iphonesimulator/all-product-headers.yaml -Xcc -iquote -Xcc /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/AO3Reader-project-headers.hmap -Xcc -I/Users/aanugupta/ao3Reader/ao3-reader/build/Debug-iphonesimulator/include -Xcc -I/Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/DerivedSources-normal/arm64 -Xcc -I/Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/DerivedSources/arm64 -Xcc -I/Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/Objects-normal/arm64/AO3Reader-Swift.h -working-directory /Users/aanugupta/ao3Reader/ao3-reader -experimental-emit-module-separately -disable-cmo
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ AO3Reader (in target 'AO3Reader' from project 'AO3Reader')
+
+EmitSwiftModule normal arm64 (in target 'AO3Reader' from project 'AO3Reader')
+    cd /Users/aanugupta/ao3Reader/ao3-reader
+    
+
+SwiftCompile normal arm64 Compiling\ AO3ReaderApp.swift /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader/AO3ReaderApp.swift (in target 'AO3Reader' from project 'AO3Reader')
+Failed frontend command:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend -frontend -c -primary-file /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader/AO3ReaderApp.swift /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader/ContentView.swift /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader/FicModels.swift /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader/FicParser.swift /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader/HomeView.swift /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader/LibraryView.swift /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader/ReaderView.swift /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader/SettingsView.swift -emit-dependencies-path /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/Objects-normal/arm64/AO3ReaderApp.d -emit-const-values-path /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/Objects-normal/arm64/AO3ReaderApp.swiftconstvalues -emit-reference-dependencies-path /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/Objects-normal/arm64/AO3ReaderApp.swiftdeps -serialize-diagnostics-path /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/Objects-normal/arm64/AO3ReaderApp.dia -target arm64-apple-ios16.0-simulator -Xllvm -aarch64-use-tbi -enable-objc-interop -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk -I /Users/aanugupta/ao3Reader/ao3-reader/build/Debug-iphonesimulator -F /Users/aanugupta/ao3Reader/ao3-reader/build/Debug-iphonesimulator/PackageFrameworks -F /Users/aanugupta/ao3Reader/ao3-reader/build/Debug-iphonesimulator -no-color-diagnostics -enable-testing -g -debug-info-format\=dwarf -dwarf-version\=4 -module-cache-path /Users/aanugupta/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -swift-version 5 -enforce-exclusivity\=checked -Onone -D DEBUG -serialize-debugging-options -const-gather-protocols-file /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/Objects-normal/arm64/AO3Reader_const_extract_protocols.json -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -empty-abi-descriptor -validate-clang-modules-once -clang-build-session-file /Users/aanugupta/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -working-directory -Xcc /Users/aanugupta/ao3Reader/ao3-reader -resource-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift -enable-anonymous-context-mangled-names -file-compilation-dir /Users/aanugupta/ao3Reader/ao3-reader -Xcc -ivfsstatcache -Xcc /Users/aanugupta/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator18.5-22F76-d5fc8ad4295d2ef488fb7d0f804ce0c4.sdkstatcache -Xcc -I/Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/swift-overrides.hmap -Xcc -iquote -Xcc /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/AO3Reader-generated-files.hmap -Xcc -I/Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/AO3Reader-own-target-headers.hmap -Xcc -I/Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/AO3Reader-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader-7393a3273f3c84dd035474ab1b146944-VFS-iphonesimulator/all-product-headers.yaml -Xcc -iquote -Xcc /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/AO3Reader-project-headers.hmap -Xcc -I/Users/aanugupta/ao3Reader/ao3-reader/build/Debug-iphonesimulator/include -Xcc -I/Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/DerivedSources-normal/arm64 -Xcc -I/Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/DerivedSources/arm64 -Xcc -I/Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/DerivedSources -Xcc -DDEBUG\=1 -module-name AO3Reader -frontend-parseable-output -disable-clang-spi -target-sdk-version 18.5 -target-sdk-name iphonesimulator18.5 -external-plugin-path /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins\#/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server -external-plugin-path /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/local/lib/swift/host/plugins\#/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server -in-process-plugin-server-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/libSwiftInProcPluginServer.dylib -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins -plugin-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/local/lib/swift/host/plugins -o /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Build/Intermediates.noindex/AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/Objects-normal/arm64/AO3ReaderApp.o -index-unit-output-path /AO3Reader.build/Debug-iphonesimulator/AO3Reader.build/Objects-normal/arm64/AO3ReaderApp.o -index-store-path /Users/aanugupta/Library/Developer/Xcode/DerivedData/AO3Reader-axapbyhulbknzygiaesoofqdmeax/Index.noindex/DataStore -index-system-modules
+
+SwiftCompile normal arm64 /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader/AO3ReaderApp.swift (in target 'AO3Reader' from project 'AO3Reader')
+    cd /Users/aanugupta/ao3Reader/ao3-reader
+    
+/Users/aanugupta/ao3Reader/ao3-reader/AO3Reader/FicParser.swift:2:8: error: no such module 'SwiftSoup'
+import SwiftSoup
+       ^
+
+SwiftDriverJobDiscovery normal arm64 Compiling Collector.swift, CombiningEvaluator.swift, Comment.swift, CssSelector.swift, DataNode.swift, DebugTrace.swift, Document.swift, DocumentType.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftCompile normal arm64 Compiling\ ContentView.swift /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader/ContentView.swift (in target 'AO3Reader' from project 'AO3Reader')
+
+SwiftDriverJobDiscovery normal arm64 Compiling QueryParserCache.swift, SourceRange.swift, StreamReader.swift, String.swift, StringBuilder.swift, StringUtil.swift, StructuralEvaluator.swift (in target 'SwiftSoup' from project 'SwiftSoup')
+
+SwiftCompile normal arm64 Compiling\ SettingsView.swift /Users/aanugupta/ao3Reader/ao3-reader/AO3Reader/SettingsView.swift (in target 'AO3Reader' from project 'AO3Reader')
+Command SwiftCompile failed with a nonzero exit code
+
