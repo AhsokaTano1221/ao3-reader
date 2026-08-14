@@ -1,4 +1,5 @@
 import SwiftUI
+import WebKit
 
 struct SettingsView: View {
     @AppStorage("isDarkMode") private var isDarkMode = false
@@ -16,6 +17,7 @@ struct SettingsView: View {
     @State private var bgColor = Color(hex: "#F5F5F3")
     @State private var textColor = Color(hex: "#222222")
     @State private var accentColor = Color(hex: "#B08F54")
+    @State private var showLoginSheet = false
     
     private var themeBg: Color { Color(hex: backgroundColorHex) }
     
@@ -36,6 +38,34 @@ struct SettingsView: View {
                                 Text("@\(username)")
                                     .font(.subheadline)
                                     .foregroundColor(.secondary)
+                            }
+                        }
+                        
+                        Spacer()
+                        
+                        if isAO3User {
+                            Button(action: {
+                                clearSession()
+                            }) {
+                                Text("Log Out")
+                                    .font(.subheadline.bold())
+                                    .foregroundColor(.red)
+                                    .padding(.horizontal, 12)
+                                    .padding(.vertical, 6)
+                                    .background(Color.red.opacity(0.1))
+                                    .cornerRadius(8)
+                            }
+                        } else {
+                            Button(action: {
+                                showLoginSheet = true
+                            }) {
+                                Text("Log In")
+                                    .font(.subheadline.bold())
+                                    .foregroundColor(accentColor)
+                                    .padding(.horizontal, 12)
+                                    .padding(.vertical, 6)
+                                    .background(accentColor.opacity(0.1))
+                                    .cornerRadius(8)
                             }
                         }
                     }
@@ -137,16 +167,6 @@ struct SettingsView: View {
                     }
                 }
                 
-                Section(header: Text("Account")) {
-                    Toggle("Log in to AO3", isOn: $isAO3User)
-                        .onChange(of: isAO3User) { newValue in
-                            if newValue {
-                                username = "AO3ReaderFan"
-                            } else {
-                                username = "Guest"
-                            }
-                    }
-                }
             }
             .scrollContentBackground(.hidden)
             .background(themeBg)
@@ -158,6 +178,43 @@ struct SettingsView: View {
             }
         }
         .preferredColorScheme(isDarkMode ? .dark : .light)
+        .sheet(isPresented: $showLoginSheet) {
+            NavigationStack {
+                AO3WebView(url: URL(string: "https://archiveofourown.org/users/login")!) { usernameStr, cookieStr in
+                    UserDefaults.standard.set(cookieStr, forKey: "ao3_session_cookie")
+                    UserDefaults.standard.set(true, forKey: "isAO3User")
+                    UserDefaults.standard.set(usernameStr, forKey: "username")
+                    
+                    isAO3User = true
+                    username = usernameStr
+                    showLoginSheet = false
+                } onCancel: {
+                    showLoginSheet = false
+                }
+                .navigationTitle("Log In to AO3")
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button("Cancel") {
+                            showLoginSheet = false
+                        }
+                        .foregroundColor(accentColor)
+                    }
+                }
+            }
+        }
+    }
+    
+    private func clearSession() {
+        UserDefaults.standard.removeObject(forKey: "ao3_session_cookie")
+        isAO3User = false
+        username = "Guest"
+        
+        let dataStore = WKWebsiteDataStore.default()
+        dataStore.fetchDataRecords(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes()) { records in
+            let filtered = records.filter { $0.displayName.contains("archiveofourown") }
+            dataStore.removeData(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes(), for: filtered) {}
+        }
     }
     
     private func applyPreset(bg: String, text: String, accent: String, font: String) {

@@ -131,6 +131,7 @@ struct FicParser {
         
         var request = URLRequest(url: url)
         request.setValue("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 Safari/605.1.15", forHTTPHeaderField: "User-Agent")
+        applySessionCookie(to: &request)
         
         let data: Data
         let response: URLResponse
@@ -368,6 +369,7 @@ struct FicParser {
         
         var request = URLRequest(url: url)
         request.setValue("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 Safari/605.1.15", forHTTPHeaderField: "User-Agent")
+        applySessionCookie(to: &request)
         
         let data: Data
         let response: URLResponse
@@ -471,6 +473,7 @@ struct FicParser {
         
         var request = URLRequest(url: url)
         request.setValue("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 Safari/605.1.15", forHTTPHeaderField: "User-Agent")
+        applySessionCookie(to: &request)
         
         let (data, response) = try await URLSession.shared.data(for: request)
         guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
@@ -484,5 +487,11 @@ struct FicParser {
         
         let items = try JSONDecoder().decode([AutocompleteItem].self, from: data)
         return items.map { $0.name }
+    }
+    
+    private static func applySessionCookie(to request: inout URLRequest) {
+        if let cookie = UserDefaults.standard.string(forKey: "ao3_session_cookie"), !cookie.isEmpty {
+            request.setValue(cookie, forHTTPHeaderField: "Cookie")
+        }
     }
 }
