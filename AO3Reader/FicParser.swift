@@ -38,6 +38,10 @@ struct FicParser {
     static func htmlToMarkdown(_ html: String) throws -> String {
         var markdown = html
         
+        // Move leading/trailing whitespace inside emphasis/bold tags to the outside
+        markdown = markdown.replacingOccurrences(of: "(<(em|i|strong|b)\\b[^>]*>)\\s+", with: " $1", options: .regularExpression, range: nil)
+        markdown = markdown.replacingOccurrences(of: "\\s+(</(em|i|strong|b)>)", with: "$1 ", options: .regularExpression, range: nil)
+        
         // 1. Replace breaks with newlines (using double spaces for hard breaks in Markdown)
         markdown = markdown.replacingOccurrences(of: "<br\\s*/?>", with: "  \n", options: .regularExpression, range: nil)
         
