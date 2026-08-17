@@ -65,13 +65,74 @@ struct ReaderView: View {
     }
     
     func cleanMarkdownSpacing(_ markdown: String) -> String {
-        var cleaned = markdown
-        let wsPattern = "[\\s\\u{00A0}]+"
-        cleaned = cleaned.replacingOccurrences(of: "\\*\\*\(wsPattern)", with: " **", options: .regularExpression)
-        cleaned = cleaned.replacingOccurrences(of: "\(wsPattern)\\*\\*", with: "** ", options: .regularExpression)
-        cleaned = cleaned.replacingOccurrences(of: "\\*\(wsPattern)", with: " *", options: .regularExpression)
-        cleaned = cleaned.replacingOccurrences(of: "\(wsPattern)\\*", with: "* ", options: .regularExpression)
-        return cleaned
+        var result = markdown
+        result = cleanPairing(result, marker: "**")
+        result = cleanPairing(result, marker: "*")
+        return result
+    }
+    
+    private func cleanPairing(_ text: String, marker: String) -> String {
+        var positions: [Int] = []
+        let chars = Array(text)
+        let markerLen = marker.count
+        
+        var i = 0
+        while i <= chars.count - markerLen {
+            if String(chars[i..<i+markerLen]) == marker {
+                positions.append(i)
+                i += markerLen
+            } else {
+                i += 1
+            }
+        }
+        
+        guard positions.count > 0 && positions.count % 2 == 0 else {
+            return text
+        }
+        
+        var newText = ""
+        var lastIdx = 0
+        
+        for pairIdx in stride(from: 0, to: positions.count, by: 2) {
+            let openPos = positions[pairIdx]
+            let closePos = positions[pairIdx + 1]
+            
+            newText += String(chars[lastIdx..<openPos])
+            
+            let insideStart = openPos + markerLen
+            let insideEnd = closePos
+            guard insideStart <= insideEnd else { continue }
+            let insideContent = String(chars[insideStart..<insideEnd])
+            
+            let whitespaceChars = CharacterSet(charactersIn: " \t\n\r\u{00A0}")
+            let trimmedInside = insideContent.trimmingCharacters(in: whitespaceChars)
+            
+            var prefix = ""
+            if openPos > 0 {
+                let prevChar = chars[openPos - 1]
+                if !prevChar.isWhitespace && prevChar != "\u{00A0}" && prevChar != "(" && prevChar != "[" && prevChar != "{" && prevChar != "\"" && prevChar != "“" && prevChar != "'" && prevChar != "‘" {
+                    prefix = " "
+                }
+            }
+            
+            var suffix = ""
+            let nextIdx = closePos + markerLen
+            if nextIdx < chars.count {
+                let nextChar = chars[nextIdx]
+                if !nextChar.isWhitespace && nextChar != "\u{00A0}" && nextChar != "." && nextChar != "," && nextChar != ";" && nextChar != ":" && nextChar != "!" && nextChar != "?" && nextChar != ")" && nextChar != "]" && nextChar != "}" && nextChar != "\"" && nextChar != "”" && nextChar != "'" && nextChar != "’" {
+                    suffix = " "
+                }
+            }
+            
+            newText += prefix + marker + trimmedInside + marker + suffix
+            lastIdx = closePos + markerLen
+        }
+        
+        if lastIdx < chars.count {
+            newText += String(chars[lastIdx..<chars.count])
+        }
+        
+        return newText
     }
     
     func safeAttributedString(from markdown: String) -> AttributedString {
