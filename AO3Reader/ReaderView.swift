@@ -66,10 +66,11 @@ struct ReaderView: View {
     
     func cleanMarkdownSpacing(_ markdown: String) -> String {
         var cleaned = markdown
-        cleaned = cleaned.replacingOccurrences(of: "\\*\\*\\s+", with: " **", options: .regularExpression)
-        cleaned = cleaned.replacingOccurrences(of: "\\s+\\*\\*", with: "** ", options: .regularExpression)
-        cleaned = cleaned.replacingOccurrences(of: "\\*\\s+", with: " *", options: .regularExpression)
-        cleaned = cleaned.replacingOccurrences(of: "\\s+\\*", with: "* ", options: .regularExpression)
+        let wsPattern = "[\\s\\u{00A0}]+"
+        cleaned = cleaned.replacingOccurrences(of: "\\*\\*\(wsPattern)", with: " **", options: .regularExpression)
+        cleaned = cleaned.replacingOccurrences(of: "\(wsPattern)\\*\\*", with: "** ", options: .regularExpression)
+        cleaned = cleaned.replacingOccurrences(of: "\\*\(wsPattern)", with: " *", options: .regularExpression)
+        cleaned = cleaned.replacingOccurrences(of: "\(wsPattern)\\*", with: "* ", options: .regularExpression)
         return cleaned
     }
     
