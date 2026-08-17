@@ -79,8 +79,15 @@ struct ReaderView: View {
         var i = 0
         while i <= chars.count - markerLen {
             if String(chars[i..<i+markerLen]) == marker {
-                positions.append(i)
-                i += markerLen
+                let hasAsteriskBefore = i > 0 && chars[i - 1] == "*"
+                let hasAsteriskAfter = (i + markerLen) < chars.count && chars[i + markerLen] == "*"
+                
+                if !hasAsteriskBefore && !hasAsteriskAfter {
+                    positions.append(i)
+                    i += markerLen
+                } else {
+                    i += 1
+                }
             } else {
                 i += 1
             }
