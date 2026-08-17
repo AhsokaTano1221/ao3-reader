@@ -64,19 +64,30 @@ struct ReaderView: View {
         }
     }
     
+    func cleanMarkdownSpacing(_ markdown: String) -> String {
+        var cleaned = markdown
+        cleaned = cleaned.replacingOccurrences(of: "\\*\\*\\s+", with: " **", options: .regularExpression)
+        cleaned = cleaned.replacingOccurrences(of: "\\s+\\*\\*", with: "** ", options: .regularExpression)
+        cleaned = cleaned.replacingOccurrences(of: "\\*\\s+", with: " *", options: .regularExpression)
+        cleaned = cleaned.replacingOccurrences(of: "\\s+\\*", with: "* ", options: .regularExpression)
+        return cleaned
+    }
+    
     func safeAttributedString(from markdown: String) -> AttributedString {
+        let cleaned = cleanMarkdownSpacing(markdown)
         do {
-            return try AttributedString(markdown: markdown, options: .init(interpretedSyntax: .inlineOnlyPreservingWhitespace))
+            return try AttributedString(markdown: cleaned, options: .init(interpretedSyntax: .inlineOnlyPreservingWhitespace))
         } catch {
-            return AttributedString(markdown)
+            return AttributedString(cleaned)
         }
     }
     
     // Calculate the height of a single paragraph in pixels under current font, size, and layout width bounds
     func calculateParagraphHeight(text: String, font: UIFont, width: CGFloat) -> CGFloat {
-        guard let attr = try? AttributedString(markdown: text, options: .init(interpretedSyntax: .inlineOnlyPreservingWhitespace)) else {
+        let cleaned = cleanMarkdownSpacing(text)
+        guard let attr = try? AttributedString(markdown: cleaned, options: .init(interpretedSyntax: .inlineOnlyPreservingWhitespace)) else {
             let nsAttr = NSAttributedString(
-                string: text,
+                string: cleaned,
                 attributes: [NSAttributedString.Key.font: font]
             )
             let constraint = CGSize(width: width, height: .greatestFiniteMagnitude)
